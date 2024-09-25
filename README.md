@@ -9,3 +9,7 @@
 ## Execute
 
 Run code in lib/api_explore.rb
+
+## Production
+
+run server in `./server.rb`
