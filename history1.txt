@@ -1,0 +1,57 @@
+mkdir soa2024-gitplay
+cd soa2024-gitplay
+ls
+ls -al
+git init
+ls
+ls -al
+ls
+code .
+ls
+git status
+git add .
+git status
+git commit -m "chore: First commit with README"
+git status
+git log
+git l
+git status
+git add README.md
+git add lib/
+git status
+git commit -m "feature: script to explore apis"
+git log
+git l
+git checkout 62991e8
+git l
+git switch main
+git l
+git remote add origin git@github.com:soumyaray/soa2024-gitplay.git
+git remote -v
+git push origin main
+git l
+git branch feat-gui
+# removing accidental commands here
+git switch feat-gui
+git status
+git add .
+git commit -m "feat: gui home page web application"
+git status
+git l
+git status
+git add .
+git commit -m "feat: country checkboxes on home page"
+git l
+git push origin feat-gui
+git l
+git status
+git add .
+git commit -m "fix: checkbox on home page"
+git push origin feat-gui
+git l
+git switch main
+git pull origin
+# removing accidental commands
+git pull origin main
+git l
+ls
