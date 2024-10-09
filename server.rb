@@ -18,6 +18,12 @@ class App < Roda
       view('home', locals: { projs: projs })
     end
 
+    r.get 'project' do
+      # call worker to do its task
+      PyCall.call_python_script('worker.py', 'task1')
+      view('project')
+    end
+
     # post request from home.html
     r.post 'home' do
       country = r.params['country']
