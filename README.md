@@ -1,5 +1,7 @@
 # SOA 2024 Git Demonstration Project
 
+Uses MVC Architecture
+
 ## Setup
 
 1. Install Ruby

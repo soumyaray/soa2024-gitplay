@@ -35,6 +35,7 @@
 	<header>
 		<h1>Welcome to the API Explorer</h1>
 	</header>
+
 	<main>
 		<p>Explore the available APIs below:</p>
 		<ul>
@@ -43,14 +44,22 @@
 			<li><a href="/api/v1/orders">Orders API</a></li>
 		</ul>
     
-    <form action="/home" method="post">
-      <label for="country">Select a country:</label>
-      <select name="country" id="country">
-        <option value="us">United States</option>
-        <option value="ca">Canada</option>
-        <option value="mx">Mexico</option>
-      </select>
-      <button type="submit">Submit</button>
+		<p>Explore the available projects below:</p>
+		<ul>
+			<li><a href="/projects/project1">Project 1</a></li>
+			<li><a href="/projects/project2">Project 2</a></li>
+			<li><a href="/projects/project3">Project 3</a></li>
+		</ul>
+    
+		<form action="/home" method="post">
+			<label for="country">Select a country:</label>
+			<select name="country" id="country">
+				<option value="us">United States</option>
+				<option value="ca">Canada</option>
+				<option value="mx">Mexico</option>
+			</select>
+			<button type="submit">Submit</button>
+		</form>
 	</main>
 	<footer>
 		<p>&copy; 2023 API Explorer</p>
