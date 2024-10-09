@@ -1,0 +1,98 @@
+git switch main
+git pull origin main
+
+# Start MVC feature by Soumya
+
+git checkout -b feature-mvc-soumya 
+git push -u origin feature-mvc-soumya
+# code some files
+git status
+git add .
+git commit -m "docs: update README about MVC"
+# open Pull Request on Github
+git push
+# code some files
+git status
+git add .
+git commit -m "feat: models for server"
+# code some files
+git status
+git add .
+git commit -m "feat: projects view available"
+# code some files
+git status
+git add .
+git status
+git commit -m "feat: update home page with projects"
+git l
+
+# Squash 3 commits into 1
+
+git rebase -i HEAD~4    # opens up your command line editor
+git l
+echo $EDITOR            # shows your default cmd editor
+micro ~/.zshrc          # change your default editor here
+git push
+
+# Ray starts working on their own helpers from main
+
+git switch main
+git checkout -b feature-mvc-ray
+# code some files
+git status
+git add .
+git commit -m "chore: helper methods for controllers"
+# code some files
+git add .
+git commit -m "chore: python process helper"
+
+# Soumya cherry picks Ray's two commits into his own branch
+
+git switch feature-mvc-soumya
+git lh
+git cherry-pick 5fbbb79^..2e817be   # two commits from feature-mvc-ray
+git l
+
+# Ray starts new worker feature from main that will conflict with feature-mvc-soumya
+
+git switch main
+git checkout -b feature-worker-ray
+# code some files
+git status
+git diff README.md  # see unstaged changes not git added yet
+git add .
+git status
+git diff --cached README.md   # see staged changes already git added
+git diff --cached             # see all staged changes
+git commit -m "feat: worker called from view"
+git show feature-mvc-soumya:views/home.html   # see file from another branch
+# code some files
+git status
+git add .
+git status
+git commit -m "feat: show projects on homepage"
+git push -u origin feature-worker-ray
+# Try to do a pull request from Github, 
+# but finds that automatic merge is not possible
+
+# Ray wants to rebase his worker branch onto the new tip of main
+
+git switch main
+git pull origin main      # get latest main branch
+git switch feature-worker-ray
+git rebase main           # causes conflicts!
+git rebase --abort        # abort rebase if you are scared!
+
+git rebase main           # let's try the rebase again
+# Manually fix conflicts in files
+git status
+git add README.md
+git rebase --continue
+git push                  # cannot push to github because branches differ!
+git push -f               # force Github to accept our local branch as the truth
+# Used pull request to merge worker branch to main on Github
+
+git switch main
+git l
+git pull origin main      # get the latest main with merged worker branch
+git l
