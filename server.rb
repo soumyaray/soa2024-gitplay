@@ -1,13 +1,21 @@
 # Ruby web application using Roda framework to serve views from views/ directory
 
 require 'roda'
+require_relative 'models/api'
 
 class App < Roda
   plugin :render
 
   route do |r|
     r.root do
-      view('home')
+      # get project models
+      projs = Project.all
+      view('home', locals: { projs: projs })
+    end
+
+    r.get 'projects' do
+      projs = Project.all
+      view('home', locals: { projs: projs })
     end
 
     # post request from home.html
