@@ -1,6 +1,9 @@
 # SOA 2024 Git Demonstration Project
 
-Uses MVC Architecture
+Web Application
+
+- Uses MVC Architecture
+- Includes a background worker
 
 ## Setup
 
